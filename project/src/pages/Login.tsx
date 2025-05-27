@@ -147,7 +147,12 @@ export default function Login() {
             </Link>
           </Box>
           <Box sx={{ textAlign: 'center', mt: 2 }}>
-            <Link href="/register" variant="body2">
+            <Link
+              component="button"
+              variant="body2"
+              onClick={() => navigate('/register')}
+              sx={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            >
               {"Don't have an account? Sign Up"}
             </Link>
           </Box>
