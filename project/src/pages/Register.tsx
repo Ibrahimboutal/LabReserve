@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -22,6 +23,7 @@ const departments = [
 
 export default function Register() {
   const { signUp } = useAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -167,8 +169,13 @@ export default function Register() {
             Sign Up
           </Button>
           <Box sx={{ textAlign: 'center' }}>
-            <Link href="/login" variant="body2">
-              {"Already have an account? Sign in"}
+            <Link
+              component="button"
+              variant="body2"
+              onClick={() => navigate('/login')}
+              sx={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              {"Already have an account? Sign In"}
             </Link>
           </Box>
         </Box>
