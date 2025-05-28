@@ -51,8 +51,16 @@ export default function MessageCenter() {
     if (user) {
       fetchMessages();
       fetchUsers();
-      subscribeToMessages();
-    }
+      const unsubscribe = subscribeToMessages();
+
+    // Fallback polling
+    const interval = setInterval(fetchMessages, 5000);
+
+    return () => {
+      unsubscribe();
+      clearInterval(interval);
+    };
+  }
   }, [user]);
 
   const fetchMessages = async () => {
