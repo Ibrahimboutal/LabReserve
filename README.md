@@ -79,3 +79,8 @@ The app is deployed and accessible at:
 ## License
 
 This project is private. Please contact the maintainer for more information.
+
+```email
+ibrahim.boutal@gmail.com
+```
+
